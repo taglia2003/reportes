@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  margin: 10px 40px;
+  padding: 10px;
+}
+.container-title {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.container-title h1{
+  display: contents;
+}

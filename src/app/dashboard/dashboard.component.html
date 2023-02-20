@@ -1,0 +1,66 @@
+    <div class="container">
+     
+      <div fxflex="70" style="flex: 1 1 70%; box-sizing: border-box; max-width: 70%;"> 
+        <div class="container-title">
+          <h1>Listado de Detenidos</h1>
+          <button mat-stroked-button color="primary"(click)="listDetenciones()"> Obtener Detenciones </button>
+        </div>      
+        <table border="1">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>FECHA</th>
+              <th>APELLIDO y NOMBRE</th>
+              <th>DIAS</th>
+              <th>DEPENDENCIA</th>
+              <th>DELITO</th>
+            </tr>              
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of this.detenciones">
+            <td>{{item.detencion_id}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.persona.apellido}} {{item.persona.nombre}}</td>
+            <td>{{item.cantidad_dias}}</td>
+            <td>{{item.dependencia?.descripcion}}</td>
+            <td>{{item.delito}}</td>
+            </tr>              
+          </tbody>
+        </table>    
+      </div>
+
+      <div fxflex="30" style="flex: 1 1 30%; box-sizing: border-box; max-width: 30%;"> 
+        <div class="container-title">
+          <h2>Totales</h2>
+          
+        </div>     
+        <ul>
+          <li>Total_Detenciones: 0</li>
+          <li>Total_Menores: 0</li>
+          <li>Detencion más reciente: 0</li>
+        </ul>
+
+   
+
+        <div class="container-title">
+          <h2>Detenciones por Dependencia</h2>   
+        </div>   
+        <ul>
+          <li>UNIDAD PENAL NRO 9 PASO DE LOS LIBRES: 0</li>
+          <li>COMISARÍA 2da. - CURUZU CUATIA	: 0</li>
+          <li>COMISARÍA 1ra. ALCAIDÍA - CURUZU CUATIA	: 0</li>
+        </ul>
+  
+        <div class="buttonGroup" fxflex="30" style="margin-top: 50px;">
+          <button mat-stroked-button color="primary" [disabled]="!this.detenciones" (click)="calcularReporte()"> Generar Reporte </button>    
+           <button mat-stroked-button color="primary"> Enviar Reporte </button>
+        </div>
+
+       
+      </div>
+
+    
+
+    </div>
+
+

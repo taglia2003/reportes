@@ -1,0 +1,242 @@
+[
+    {
+        "detencion_id": 1452,
+        "fecha": "2022-11-03T08:40:00",
+        "cantidad_dias": 9,
+        "persona": {
+            "numero_documento": 36112753,
+            "apellido": "SAMBRANA",
+            "nombre": "Ivan Alejandro",
+            "fecha_nacimiento": "1991-02-14"
+        },
+        "dependencia": {
+            "dependencia_id": 9,
+            "descripcion": "UNIDAD PENAL NRO 9 PASO DE LOS LIBRES"
+        },
+        "delito": "Abandono de cargo"
+    },
+    {
+        "detencion_id": 1438,
+        "fecha": "2022-10-01T11:21:00",
+        "cantidad_dias": 10,
+        "persona": {
+            "numero_documento": 11386334,
+            "apellido": "GOMEZ",
+            "nombre": "NARDO JORGE ADRIAN",
+            "fecha_nacimiento": "1974-11-14"
+        },
+        "dependencia": {
+            "dependencia_id": 9,
+            "descripcion": "UNIDAD PENAL NRO 9 PASO DE LOS LIBRES"
+        },
+        "delito": "Abandono de cargo"
+    },
+    {
+        "detencion_id": 1513,
+        "fecha": "2023-02-08T12:24:00",
+        "cantidad_dias": 1,
+        "persona": {
+            "numero_documento": 40790410,
+            "apellido": "FERNANDEZ",
+            "nombre": "Agustin",
+            "fecha_nacimiento": "1997-11-27"
+        },
+        "dependencia": {
+            "dependencia_id": 23,
+            "descripcion": "COMISARÍA 2da. - CURUZU CUATIA"
+        },
+        "delito": "Robo Calificado"
+    },
+    {
+        "detencion_id": 1509,
+        "fecha": "2023-01-25T09:48:00",
+        "cantidad_dias": 30,
+        "persona": {
+            "numero_documento": 13636848,
+            "apellido": "MENDEZ",
+            "nombre": "ABELARDO HUGO",
+            "fecha_nacimiento": "1980-11-14"
+        },
+        "dependencia": {
+            "dependencia_id": 23,
+            "descripcion": "COMISARÍA 2da. - CURUZU CUATIA"
+        },
+        "delito": "Abandono de cargo"
+    },
+    {
+        "detencion_id": 1427,
+        "fecha": "2022-09-05T11:35:00",
+        "cantidad_dias": 5,
+        "persona": {
+            "numero_documento": 16403296,
+            "apellido": "MENDEZ",
+            "nombre": "PEDRO RAMON",
+            "fecha_nacimiento": "1963-09-15"
+        },
+        "dependencia": {
+            "dependencia_id": 9,
+            "descripcion": "UNIDAD PENAL NRO 9 PASO DE LOS LIBRES"
+        },
+        "delito": "Abandono de cargo"
+    },
+    {
+        "detencion_id": 1315,
+        "fecha": "2022-01-23T05:10:00",
+        "cantidad_dias": 8,
+        "persona": {
+            "numero_documento": 43999374,
+            "apellido": "MARTINEZ",
+            "nombre": "URIEL CAIN",
+            "fecha_nacimiento": "2005-03-26"
+        },
+        "dependencia": {
+            "dependencia_id": 24,
+            "descripcion": "COMISARÍA 1ra. ALCAIDÍA - CURUZU CUATIA"
+        },
+        "delito": "Homicidio agravado por su modo de comisión"
+    },
+    {
+        "detencion_id": 1305,
+        "fecha": "2022-04-23T01:15:00",
+        "cantidad_dias": 8,
+        "persona": {
+            "numero_documento": 39195347,
+            "apellido": "ITURRIAGA",
+            "nombre": "ALBERTO LUCIANO",
+            "fecha_nacimiento": "1996-01-27"
+        },
+        "dependencia": {
+            "dependencia_id": 24,
+            "descripcion": "COMISARÍA 1ra. ALCAIDÍA - CURUZU CUATIA"
+        },
+        "delito": "Homicidio agravado por el vínculo"
+    },
+    {
+        "detencion_id": 1311,
+        "fecha": "2022-02-26T13:30:00",
+        "cantidad_dias": 8,
+        "persona": {
+            "numero_documento": 38873206,
+            "apellido": "DIAZ",
+            "nombre": "ARMANDO EZEQUIEL",
+            "fecha_nacimiento": "1995-03-12"
+        },
+        "dependencia": {
+            "dependencia_id": 24,
+            "descripcion": "COMISARÍA 1ra. ALCAIDÍA - CURUZU CUATIA"
+        },
+        "delito": "Abigeato "
+    },
+    {
+        "detencion_id": 1420,
+        "fecha": "2022-09-03T08:30:00",
+        "cantidad_dias": 31,
+        "persona": {
+            "numero_documento": 42004870,
+            "apellido": "ESCALANTE",
+            "nombre": "OSCAR RAMON",
+            "fecha_nacimiento": "1999-07-09"
+        },
+        "dependencia": {
+            "dependencia_id": 24,
+            "descripcion": "COMISARÍA 1ra. ALCAIDÍA - CURUZU CUATIA"
+        },
+        "delito": "Daño ejecutado a instalaciones públicas."
+    },
+    {
+        "detencion_id": 1309,
+        "fecha": "2022-02-26T17:40:00",
+        "cantidad_dias": 42,
+        "persona": {
+            "numero_documento": 38877714,
+            "apellido": "GODOY",
+            "nombre": "JUAN MANUEL",
+            "fecha_nacimiento": "2006-10-29"
+        },
+        "dependencia": {
+            "dependencia_id": 24,
+            "descripcion": "COMISARÍA 1ra. ALCAIDÍA - CURUZU CUATIA"
+        },
+        "delito": "Abigeato "
+    },
+    {
+        "detencion_id": 1386,
+        "fecha": "2022-08-15T23:50:00",
+        "cantidad_dias": 35,
+        "persona": {
+            "numero_documento": 32078568,
+            "apellido": "GOMEZ",
+            "nombre": "ROBERTO HORACIO",
+            "fecha_nacimiento": "1988-02-27"
+        },
+        "dependencia": {
+            "dependencia_id": 23,
+            "descripcion": "COMISARÍA 2da. - CURUZU CUATIA"
+        },
+        "delito": "Abigeato "
+    },
+    {
+        "detencion_id": 1433,
+        "fecha": "2022-10-01T10:45:00",
+        "cantidad_dias": 8,
+        "persona": {
+            "numero_documento": 25671675,
+            "apellido": "ROJAS",
+            "nombre": "RAMON EDUARDO",
+            "fecha_nacimiento": "1977-04-01"
+        },
+        "dependencia": {
+            "dependencia_id": 9,
+            "descripcion": "UNIDAD PENAL NRO 9 PASO DE LOS LIBRES"
+        },
+        "delito": "Abigeato "
+    },
+    {
+        "detencion_id": 1437,
+        "fecha": "2022-08-01T08:17:00",
+        "cantidad_dias": 4,
+        "persona": {
+            "numero_documento": 22019829,
+            "apellido": "FERNANDEZ",
+            "nombre": "HUGO ANGEL",
+            "fecha_nacimiento": "1971-12-05"
+        },
+        "dependencia": {
+            "dependencia_id": 9,
+            "descripcion": "UNIDAD PENAL NRO 9 PASO DE LOS LIBRES"
+        },
+       "delito": "Abigeato "
+    },
+    {
+        "detencion_id": 1456,
+        "fecha": "2022-11-08T08:52:00",
+        "cantidad_dias": 8,
+        "persona": {
+            "numero_documento": 40509265,
+            "apellido": "ALVEZ",
+            "nombre": "CRISTIAN FABIAN",
+            "fecha_nacimiento": "1997-10-03"
+        },
+        "dependencia": {
+            "dependencia_id": 23,
+            "descripcion": "COMISARÍA 2da. - CURUZU CUATIA"
+        },
+        "delito": "Abigeato "
+    },
+    {
+        "detencion_id": 1484,
+        "fecha": "2023-01-30T10:22:00",
+        "cantidad_dias": 11,
+        "persona": {
+            "numero_documento": 28027395,
+            "apellido": "PUCHETA",
+            "nombre": "RAMÓN HÉCTOR MANUEL",
+            "fecha_nacimiento": "1980-10-20"
+        },
+        "dependencia": {
+            "dependencia_id": 23,
+            "descripcion": "COMISARÍA 2da. - CURUZU CUATIA"
+        },
+        "delito": "Daño ejecutado a instalaciones públicas."
+    }
+]
