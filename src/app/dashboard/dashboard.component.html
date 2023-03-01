@@ -1,65 +1,123 @@
-    <div class="container">
-     
-      <div fxflex="70" style="flex: 1 1 70%; box-sizing: border-box; max-width: 70%;"> 
-        <div class="container-title">
-          <h1>Listado de Detenidos</h1>
-          <button mat-stroked-button color="primary"(click)="listDetenciones()"> Obtener Detenciones </button>
-        </div>      
-        <table border="1">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>FECHA</th>
-              <th>APELLIDO y NOMBRE</th>
-              <th>DIAS</th>
-              <th>DEPENDENCIA</th>
-              <th>DELITO</th>
-            </tr>              
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of this.detenciones">
-            <td>{{item.detencion_id}}</td>
-            <td>{{item.fecha}}</td>
-            <td>{{item.persona.apellido}} {{item.persona.nombre}}</td>
-            <td>{{item.cantidad_dias}}</td>
-            <td>{{item.dependencia?.descripcion}}</td>
-            <td>{{item.delito}}</td>
-            </tr>              
-          </tbody>
-        </table>    
+      <div class="container-title text-center" >
+        <h1>Listado de Detenidos</h1>
+        <button mat-stroked-button color="primary"(click)="listDetenciones()"> Obtener Detenciones </button>
+      </div>
+      <div class="container">
+      <div fxflex="80" style="flex: 1 1 80%; box-sizing: border-box; max-width: 80%;">
+        <table mat-table [dataSource]="detenciones" class="mat-elevation-z8" multiTemplateDataRows >
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef > ID </th>
+            <td mat-cell *matCellDef="let item"> {{item.detencion_id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef > Fecha </th>
+            <td mat-cell *matCellDef="let item"> {{item.fecha | date:'dd/MM/yyyy hh:mm'}}hs</td>
+          </ng-container>
+
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef > Apellido y nombre </th>
+            <td mat-cell *matCellDef="let item"> {{item.persona.apellido}}, {{item.persona.nombre}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="dias">
+            <th mat-header-cell *matHeaderCellDef > Dias </th>
+            <td mat-cell *matCellDef="let item" [ngClass]="item.cantidad_dias > 30 ? 'max-days' : ''"> {{ item.cantidad_dias }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="dependencia">
+            <th mat-header-cell *matHeaderCellDef > Dependencia </th>
+            <td mat-cell *matCellDef="let item"> {{item.dependencia?.descripcion}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="delito">
+            <th mat-header-cell *matHeaderCellDef > Delito </th>
+            <td mat-cell *matCellDef="let item"> {{item.delito}} </td>
+          </ng-container>
+
+          <!-- District Column -->
+          <ng-container matColumnDef="edad">
+            <th mat-header-cell *matHeaderCellDef > Edad </th>
+            <td mat-cell *matCellDef="let item"> {{CalculateAge(item.persona.fecha_nacimiento)}}</td>
+          </ng-container>
+
+                <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+                <ng-container matColumnDef="expandedDetail">
+                  <td mat-cell *matCellDef="let item" [attr.colspan]="columnsToDisplay.length">
+                    <div class="example-element-detail" [@detailExpand]="item == expandedElement ? 'expanded' : 'collapsed'">
+
+                        <div fxflex="50" style="flex: 1 1 50%; box-sizing: border-box; max-width: 50%;">
+                          <p class="text-center">Datos personales:</p>
+                          <mat-divider></mat-divider>
+                          <ul>
+                            <li>Nombre y apellido:<b> {{ item.persona.nombre }}, {{ item.persona.apellido}} </b></li>
+                            <li>DNI: {{ item.persona.numero_documento }}</li>
+                            <li>Fecha nacimiento: {{ item.persona.fecha_nacimiento }}</li>
+                            <li>Edad: {{CalculateAge(item.persona.fecha_nacimiento)}} años</li>
+                          </ul>
+                        </div>
+                        <div fxflex="50" style="flex: 1 1 50%; box-sizing: border-box; max-width: 50%;">
+                          <p class="text-center">Detalle de la detencion:</p>
+                          <mat-divider></mat-divider>
+                          <ul>
+                            <li>Fecha de detención: {{ item.fecha | date:'dd/MM/yyyy hh:mm'}}hs </li>
+                            <li>{{item.cantidad_dias}} dias detenido</li>
+                            <li>Delito {{item.delito}}</li>
+                            <li>Dependencia: {{item.dependencia.descripcion}}</li>
+                          </ul>
+                        </div>
+                    </div>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="columnsToDisplay" ></tr>
+                <tr mat-row *matRowDef="let item; columns: columnsToDisplay;"
+                    [ngClass]="{'make-gold': CalculateAge(item.persona.fecha_nacimiento) < 18}"
+                    class="example-element-row"
+                    [class.example-expanded-row]="expandedElement === item"
+                    (click)="expandedElement = expandedElement === item ? null : item">
+                </tr>
+                <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+        </table>
+
       </div>
 
-      <div fxflex="30" style="flex: 1 1 30%; box-sizing: border-box; max-width: 30%;"> 
+      <div fxflex="20" style="flex: 1 1 20%; box-sizing: border-box; max-width: 20%;">
         <div class="container-title">
           <h2>Totales</h2>
-          
-        </div>     
-        <ul>
-          <li>Total_Detenciones: 0</li>
-          <li>Total_Menores: 0</li>
-          <li>Detencion más reciente: 0</li>
-        </ul>
-
-   
-
-        <div class="container-title">
-          <h2>Detenciones por Dependencia</h2>   
-        </div>   
-        <ul>
-          <li>UNIDAD PENAL NRO 9 PASO DE LOS LIBRES: 0</li>
-          <li>COMISARÍA 2da. - CURUZU CUATIA	: 0</li>
-          <li>COMISARÍA 1ra. ALCAIDÍA - CURUZU CUATIA	: 0</li>
-        </ul>
-  
-        <div class="buttonGroup" fxflex="30" style="margin-top: 50px;">
-          <button mat-stroked-button color="primary" [disabled]="!this.detenciones" (click)="calcularReporte()"> Generar Reporte </button>    
-           <button mat-stroked-button color="primary"> Enviar Reporte </button>
         </div>
 
-       
+        <mat-list role="list">
+          <mat-list-item role="listitem">Total Detenciones: {{total_detenciones}}</mat-list-item>
+          <mat-list-item role="listitem">Total Menores: {{personas_array.length}}</mat-list-item>
+          <mat-list-item role="listitem">Detencion más reciente: {{ultimo_movimiento | date:'dd/MM/yyyy hh:mm'}}hs</mat-list-item>
+        </mat-list>
+
+
+
+        <div class="container-title">
+          <h2>Detenciones por Dependencia</h2>
+        </div>
+        <mat-list role="list" *ngFor="let result of totales_por_dependencia; let i = index">
+          <mat-list-item role="listitem">{{ result.descripcion }} : {{ result.count }}</mat-list-item>
+        </mat-list>
+
+        <div class="buttonGroup" fxflex="30" style="margin-top: 50px;">
+          <button mat-stroked-button color="primary" [disabled]="!this.detenciones" (click)="calcularReporte()"> Generar Reporte </button>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Observacion:</mat-label>
+            <input matInput placeholder="Observaciones..." id="input_obs" value="">
+            <button mat-stroked-button color="primary" (click)="guardar_reporte()"> Enviar Reporte </button>
+          </mat-form-field>
+        </div>
+
+
       </div>
 
-    
+
 
     </div>
 

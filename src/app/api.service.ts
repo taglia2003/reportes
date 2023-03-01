@@ -9,9 +9,10 @@ import { Observable } from "rxjs";
 export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
- 
+
   getDetenciones(): Observable<any[]>{
     return this.httpClient.get<any[]>(`${environment.baseURL}detenciones.json`);
   }
-  
+
+
 }
